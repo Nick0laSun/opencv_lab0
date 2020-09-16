@@ -17,7 +17,8 @@ int main(int argc, char* argv[])
 
     cvtColor(image_hsv, image_hsv, COLOR_BGR2HSV);
     cvtColor(image_gray, image_gray, COLOR_BGR2GRAY);
-    threshold(image_bin, image_bin, 50, 255, THRESH_BINARY);
+    cvtColor(image_bin, image_bin, COLOR_BGR2GRAY);
+    threshold(image_bin, image_bin, 127, 255, THRESH_BINARY);
     circle(image_for_draw, Point(175,180), 25, Scalar(255, 0, 0), 2);
     circle(image_for_draw, Point(270,175), 25, Scalar(255, 0, 0), 2);
     rectangle(image_for_draw, Point(175,240), Point(280,280), Scalar(0, 0, 255), 2);
